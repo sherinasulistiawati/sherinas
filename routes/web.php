@@ -31,3 +31,9 @@ Route::get('/percobaan', 'MyController@index');
 Route::get('/percobaan2', 'MyController@tampilan');
 
 Route::get('/percobaan3', 'MyController@tampilmodel');
+
+Route::resource('orangtua','OrangtuaController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
