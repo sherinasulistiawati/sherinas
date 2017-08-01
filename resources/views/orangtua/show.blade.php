@@ -38,11 +38,6 @@
 						<textarea class="form-control" rows="10" name="e" required=""readonly="">{{$ortu->alamat}}</textarea>
 					</div>
 
-					<div class="form-group">
-						<button type="submit" class="btn btn-success">Simpan</button>
-						<button type="reset" class="btn btn-danger">Reset</button>
-					</div>
-
 				</form>
 				
 			</div>
