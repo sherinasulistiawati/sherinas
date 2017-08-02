@@ -18,7 +18,7 @@ class CreateBooksTable extends Migration
             $table->string('title');
             $table->integer('author_id')->unsigned();
             $table->integer('amount');
-            $table->string('cover');
+            $table->string('cover')->nullable;
 
             $table->foreign('author_id')->references('id')->on('authors')
             ->onUpdate('cascade')->onDelete('cascade');

@@ -32,16 +32,6 @@
 						<input type="number" name="c" class="form-control" required="" value="{{$book->amount}}" readonly="">
 					</div>
 
-					<div class="form-group">
-						<label class="form-control">Cover</label>
-						<input type="file" class="form-control" name="d" readonly="">{{$book->cover}}
-					</div>
-
-					<div class="form-group">
-						<button type="submit" class="btn btn-success">Simpan</button>
-						<button type="reset" class="btn btn-danger">Reset</button>
-					</div>
-
 				</form>
 				
 			</div>

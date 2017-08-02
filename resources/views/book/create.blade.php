@@ -29,7 +29,7 @@
 				</div>
 			<div class="form-group">
 				<label class="control-label">Cover</label>
-				<input type="file" name="cover" class="form-control" required="">
+				<input type="file" name="d" class="form-control" required="">
 			</div>
 			<div class="form-group">
 				<button type="submit" class="btn btn-success">Simpan</button>

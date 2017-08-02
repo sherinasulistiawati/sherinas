@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="row">	
-	<center><h1>Data Boook</h1></center>
+	<center><h1>Data Book</h1></center>
 	<div class="panel panel-primary">
 		<div class="panel-heading">Data Book
 		<div class="panel-title pull-right">
@@ -9,7 +9,7 @@
 			</div>
 			
 			<div class="panel-body">
-				<form action="{{route('book.update',$book->id)}}" method="POST">
+				<form action="{{route('book.update',$book->id)}}" method="POST" enctype="multipart/form-data">
 				<input type="hidden" name="_method" value="PUT">
 				<input type="hidden" name="_token" value="{{csrf_token()}}">
 
@@ -29,12 +29,12 @@
 
 					<div class="form-group">
 						<label class="control-label">Amount </label>
-						<input type="number" name="c" class="form-control" required="" value="{{$book->amount}}">
+						<input type="number" name="c" class="form-control" required="" value="{{$data->amount}}">
 					</div>
 
 					<div class="form-group">
 						<label class="form-control">Cover</label>
-						<input type="file" class="form-control" name="d" >{{$book->cover}}</textarea>
+						<input type="file" class="form-control" name="d" >
 					</div>
 
 					<div class="form-group">

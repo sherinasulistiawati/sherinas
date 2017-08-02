@@ -46,19 +46,16 @@ class BookController extends Controller
         $book->author_id = $request->b;
         $book->amount = $request->c;
 
-        if($request->hasFile('cover')){
-            $books = $request->file('cover');
+        if($request->hasFile('d')){
+            $books = $request->file('d');
             $extension = $books->getClientOriginalExtension();
             $filename = str_random(6). '.' . $extension;
             $destinationPath = public_path() .
                 DIRECTORY_SEPARATOR . 'img';
-                $books->move($destinationPath, @filename);
+                $books->move($destinationPath, $filename);
                 $book->cover = $filename;
         }
         $book->save();
-        //di create.blade bag<form> + enctype="mulyipart/formdata"
-        //covertype ->file
-        //dd($book);
         return redirect('book');
     }
 
@@ -101,20 +98,22 @@ class BookController extends Controller
     {
         //
         $book = Book::findOrFail($id);
-        $anak->title = $request->a;
-        $anak->author_id = $request->b;
-        $anak->amount = $request->c;
+        $book->title = $request->a;
+        $book->author_id = $request->b;
+        $book->amount = $request->c;
 
-        if($request->hasFile('cover')){
-            $books = $request->file('cover');
+        if($request->hasFile('d')){
+            $books = $request->file('d');
             $extension = $books->getClientOriginalExtension();
             $filename = str_random(6). '.' . $extension;
             $destinationPath = public_path() .
                 DIRECTORY_SEPARATOR . 'img';
-                $books->move($destinationPath, @filename);
+                $books->move($destinationPath, $filename);
                 $book->cover = $filename;
         }
         $book->save();
+        return redirect('book');
+
 
     }
 
@@ -127,5 +126,8 @@ class BookController extends Controller
     public function destroy($id)
     {
         //
+        $book = Book::findOrFail($id);
+        $book->delete();
+        return redirect('book');
     }
 }

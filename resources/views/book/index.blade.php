@@ -21,11 +21,11 @@
 <tbody>
 	@foreach($book as $data)
 	<tr>
-		<td>{{$data->nama}}</td>
+		<td>{{$data->title}}</td>
 		<td>{{$data->Author->name}}</td>
 		<td>{{$data->amount}}</td>
-		<td><img src="{{asset('/img/'.$data->cover.'')}}"
-		<td>
+		<td><img src="{{asset('img/'.$data->cover.'')}}" width="30" height="30">
+		</td>
 	</td>
 		<td>
 			<a class="btn btn-success" href="/book/{{$data->id}}/edit">Edit</a>

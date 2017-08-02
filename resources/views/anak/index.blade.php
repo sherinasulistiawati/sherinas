@@ -19,7 +19,7 @@
     </tr>
 </thead>
 <tbody>
-	@foreach($book as $data)
+	@foreach($anak as $data)
 	<tr>
 		<td>{{$data->nama}}</td>
 		<td>{{$data->Orangtua->nama_ayah}} dan {{$data->nama_ibu}}</td>
